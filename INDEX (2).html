@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento Infantil Interactivo</title>
+    <!-- Fuentes infantiles de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- PageFlip -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>📖 Cuento Infantil</h1>
+        
+        <!-- Barra de herramientas de accesibilidad -->
+        <div class="accessibility-bar">
+            <button id="btn-tts" class="btn btn-audio" title="Lectura en Voz Alta">
+                🔊 Escuchar Cuento
+            </button>
+            <div class="font-controls">
+                <span class="label-text">Texto:</span>
+                <button id="btn-zoom-out" class="btn btn-icon" title="Achicar Letra">A-</button>
+                <button id="btn-zoom-in" class="btn btn-icon" title="Agrandar Letra">A+</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="loading">✨ Cargando tu cuento mágico...</div>
+
+    <!-- Panel para personas de baja visión (Lectura de texto ampliado) -->
+    <div id="accessible-text-panel" class="accessible-text-panel">
+        <p id="accessible-page-text">El texto de la página aparecerá aquí con letra grande.</p>
+    </div>
+
+    <!-- Contenedor del Libro -->
+    <main class="book-container">
+        <!-- Botón Anterior -->
+        <button id="btn-prev" class="nav-btn prev-btn" title="Página Anterior">
+            <span>❮</span>
+        </button>
+
+        <div id="flip-book" class="flip-book"></div>
+
+        <!-- Botón Siguiente -->
+        <button id="btn-next" class="nav-btn next-btn" title="Página Siguiente">
+            <span>❯</span>
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
